@@ -68,17 +68,17 @@ void CListRemoveEveryN::remove_even(int n) {
     		t1 = t;
     		t = t->next;
     	} else {
-    		if (t == head) {
-    			head = head->next;
-    			delete t;
-    		} else {
-    			t1->next = t->next;
-    			delete t;
-    			t = t1->next;
-    		}   
-    	}
-        ++i;
-	}
+    	if (t == head) {
+    		head = head->next;
+    		delete t;
+    	} else {
+    		t1->next = t->next;
+    		delete t;
+    		t = t1->next;
+    	}   
+    }
+    ++i;
+}
 
     cout << "Stack after function: " << endl;
     print();
@@ -86,22 +86,23 @@ void CListRemoveEveryN::remove_even(int n) {
 
 
 void CListRemoveEveryN::ReverseStack() {  
-
-    int tmp[100], i = 0;
-    int g = counter();
-    STACK *p = head;
-    STACK *p1;
+	
+	int g = counter();
+	int tmp[g], i = 0;
+    
+    	STACK *p = head;
+    	STACK *p1;
     
     
-    while (p != NULL) {
-        tmp[i++] = p->info;
-        p = p->next;
-    }
+    	while (p != NULL) {
+       		tmp[i++] = p->info;
+        	p = p->next;
+    	}
 
-    ReleaseList();
-    for (i = 0; i < g; i++) {
-        push(tmp[i]);
-    }
+    	ReleaseList();
+    	for (i = 0; i < g; i++) {
+    	    push(tmp[i]);
+    	}
 }
 
 
