@@ -90,9 +90,7 @@ void CListRemoveEveryN::ReverseStack() {
 	int g = counter();
 	int tmp[g], i = 0;
     
-    	STACK *p = head;
-    	STACK *p1;
-    
+    	STACK *p = head;    
     
     	while (p != NULL) {
        		tmp[i++] = p->info;
