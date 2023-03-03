@@ -14,7 +14,8 @@ class CListRemoveEveryN {
 
         void push(int s);
         void print();
-        STACK *remove_even(int n);
-        //void DisplayList();
+        void remove_even(int n);
+        void ReverseStack();
+        int counter();
         void ReleaseList();
 };
