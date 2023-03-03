@@ -87,31 +87,12 @@ void CListRemoveEveryN::remove_even(int n) {
 
 void CListRemoveEveryN::ReverseStack() {  
 	
-	int g = counter();
-	int tmp[g], i = 0;
-    
-    	STACK *p = head;    
-    
-    	while (p != NULL) {
-       		tmp[i++] = p->info;
-        	p = p->next;
-    	}
+	STACK *p = head;
+	head = NULL;
 
-    	ReleaseList();
-    	for (i = 0; i < g; i++) {
-    	    push(tmp[i]);
-    	}
-}
-
-
-int CListRemoveEveryN::counter() {
-
-    STACK *p = head;
-    int i = 0;
-    
 	while (p) {
-        p = p->next;
-        ++i;
-    }
-    return i;
+        	push(p->info);
+        	p = p->next;   
+    	} 
 }
+
